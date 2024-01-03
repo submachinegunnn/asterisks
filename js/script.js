@@ -1,13 +1,10 @@
-// Simulated data representing available products
 const products = [
   { id: 1, name: 'Product 1', price: 19.99, image: 'product1.jpg' },
   { id: 2, name: 'Product 2', price: 29.99, image: 'product2.jpg' },
-  // Add more product objects as needed
 ];
 
-let cartItems = []; // Initially empty cart
+let cartItems = [];
 
-// Function to add item to the cart
 function addToCart(productId) {
   const productToAdd = products.find(product => product.id === productId);
   if (productToAdd) {
@@ -18,7 +15,6 @@ function addToCart(productId) {
   }
 }
 
-// Function to update the cart items on the cart.html page
 function updateCart() {
   const cartContainer = document.querySelector('.cart-container');
   const cartTotal = document.querySelector('.cart-total');
@@ -45,11 +41,9 @@ function updateCart() {
   cartTotal.innerHTML = `<h3>Total: $${totalPrice.toFixed(2)}</h3>`;
 }
 
-// Function to remove item from the cart
 function removeFromCart(productId) {
   cartItems = cartItems.filter(item => item.id !== productId);
   updateCart();
 }
 
-// Simulate adding products to the cart (for demonstration purposes)
-addToCart(1); // Add Product 1 to the cart
+addToCart(1);
