@@ -1,14 +1,18 @@
 const sidebar = document.querySelector('.sidebar');
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Event listener for when mouse enters the left edge of the page
   document.addEventListener('mouseover', function(e) {
-    if (e.clientX <= 10) { // Change the threshold value as needed
+    if (e.clientX <= 10) {
       sidebar.classList.add('active');
     }
   });
 
-  // Event listener for when mouse leaves the sidebar
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) {
+      sidebar.classList.remove('active');
+    }
+  });
+
   sidebar.addEventListener('mouseleave', function() {
     sidebar.classList.remove('active');
   });
